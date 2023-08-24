@@ -4,5 +4,5 @@ metadata:
   name: test-cm
 data:
   config.yaml: |
-    a: new
+    a: bah
     b: cba
