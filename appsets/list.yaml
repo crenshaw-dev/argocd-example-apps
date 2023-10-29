@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+spec:
+  goTemplate: true
+  generators:
+  # List is simple/easy, but many other generators are available.
+  - list:
+      elements:
+      - env: dev
+      - env: e2e
+  template:
+    metadata:
+      name: 'guestbook-{{.env}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/crenshaw-dev/argocd-example-apps.git
+        path: helm-guestbook
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
