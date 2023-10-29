@@ -20,6 +20,10 @@ spec:
       source:
         repoURL: https://github.com/crenshaw-dev/argocd-example-apps.git
         path: helm-guestbook
+        helm:
+          values: |
+            image:
+              tag: "0.1"
       destination:
         server: https://kubernetes.default.svc
         namespace: default
