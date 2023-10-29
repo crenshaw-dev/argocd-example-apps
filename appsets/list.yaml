@@ -10,6 +10,7 @@ spec:
       elements:
       - env: dev
       - env: e2e
+      - env: prd
   template:
     metadata:
       name: 'guestbook-{{.env}}'
