@@ -31,8 +31,8 @@ spec:
     rollingSync:
       steps:
       - matchExpressions:
-        - {key: version, operator: In, values: ["dev"]}
+        - {key: env, operator: In, values: ["dev"]}
       - matchExpressions:
-        - {key: version, operator: In, values: ["e2e"]}
+        - {key: env, operator: In, values: ["e2e"]}
       - matchExpressions:
-        - {key: version, operator: In, values: ["prd"]}
+        - {key: env, operator: In, values: ["prd"]}
