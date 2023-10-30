@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+spec:
+  goTemplate: true
+  generators:
+    - list:
+        elements:
+          - env: dev
+            cluster: team-1
+          - env: dev
+            cluster: team-2
+          - env: e2e
+            cluster: team-3
+          - env: e2e
+            cluster: team-4
+          - env: e2e
+            cluster: team-5
+          - env: prd
+            cluster: team-6
+          - env: prd
+            cluster: team-7
+          - env: prd
+            cluster: team-8
+  template:
+    metadata:
+      name: 'rollouts-{{.env}}-{{.cluster}}'
+      labels:
+        env: '{{.env}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/crenshaw-dev/argocd-example-apps.git
+        path: helm-guestbook
+        helm:
+          values: |
+            image:
+              tag: "0.1"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+  strategy:
+    type: "RollingSync"
+    rollingSync:
+      steps:
+        - matchExpressions:
+            - {key: env, operator: In, values: ["dev"]}
+        - matchExpressions:
+            - {key: env, operator: In, values: ["e2e"]}
+          maxUpdate: 1
+        - matchExpressions:
+            - {key: env, operator: In, values: ["prd"]}
