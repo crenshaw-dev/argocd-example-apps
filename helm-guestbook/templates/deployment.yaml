@@ -8,6 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  progressDeadlineSeconds: 5
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
   selector:
