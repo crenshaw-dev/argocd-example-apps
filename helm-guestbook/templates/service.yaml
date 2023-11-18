@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: {{ template "helm-guestbook.fullname" . }}
   labels:
+    test: label
     app: {{ template "helm-guestbook.name" . }}
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
