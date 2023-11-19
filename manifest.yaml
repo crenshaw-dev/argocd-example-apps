@@ -7,6 +7,7 @@ metadata:
     chart: helm-guestbook-0.1.0
     heritage: Helm
     release: test
+    test: label
   name: test-helm-guestbook
 spec:
   ports:
