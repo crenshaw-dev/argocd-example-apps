@@ -32,7 +32,7 @@ metadata:
     release: test
   name: test-helm-guestbook
 spec:
-  progressDeadlineSeconds: 5
+  progressDeadlineSeconds: 60
   replicas: 1
   revisionHistoryLimit: 3
   selector:
