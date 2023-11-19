@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/instance: test
     chart: helm-guestbook-0.1.0
     heritage: Helm
+    new: stuff
     release: test
   name: test-helm-guestbook
 spec:
