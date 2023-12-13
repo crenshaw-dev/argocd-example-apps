@@ -6,3 +6,24 @@ data:
   config.yaml: |
     a: bah
     b: cba
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app.kubernetes.io/instance: redacted-nats
+    app.kubernetes.io/name: nats
+    app.kubernetes.io/version: 2.10.1
+  annotations:
+    vault.security.banzaicloud.io/vault-skip-verify: "true"
+    vault.security.banzaicloud.io/vault-role: "nats"
+    vault.security.banzaicloud.io/inline-mutation: 'true'
+  name: nats-box-contexts
+stringData:
+  default.json: |
+    {
+      "url": "nats://redacted-nats:4222",
+      "user": "natsbox",
+      "password": "${vault:/secret/data/redacted/nats/natsusers#NATSBOXPW}"
+    }
+type: Opaque
