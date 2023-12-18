@@ -3,5 +3,4 @@ kind: CronTab
 metadata:
   name: my-new-cron-object
 spec:
-  image: whatever
   cronSpec: null
