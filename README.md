@@ -7,7 +7,7 @@ To hydrate the manifests in this repository, run the following commands:
 
 git clone https://github.com/crenshaw-dev/argocd-example-apps
 # cd into the cloned directory
-git checkout 
+git checkout fa8c59ca23b045a87eea1bf20ab9232214f4b7ff
 
 
 
