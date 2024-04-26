@@ -33,7 +33,7 @@ metadata:
   name: dev-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -63,7 +63,7 @@ spec:
             port: http
         resources:
           limits:
-            cpu: 250m
+            cpu: 500m
 
 ---
 
