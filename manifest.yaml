@@ -5,8 +5,8 @@ metadata:
     app: helm-guestbook
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test
-  name: test-helm-guestbook
+    release: release-name
+  name: release-name-helm-guestbook
 spec:
   ports:
   - name: http
@@ -15,7 +15,7 @@ spec:
     targetPort: http
   selector:
     app: helm-guestbook
-    release: test
+    release: release-name
   type: ClusterIP
 
 ---
@@ -27,8 +27,8 @@ metadata:
     app: helm-guestbook
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test
-  name: test-helm-guestbook
+    release: release-name
+  name: release-name-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
   replicas: 3
@@ -36,12 +36,12 @@ spec:
   selector:
     matchLabels:
       app: helm-guestbook
-      release: test
+      release: release-name
   template:
     metadata:
       labels:
         app: helm-guestbook
-        release: test
+        release: release-name
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
