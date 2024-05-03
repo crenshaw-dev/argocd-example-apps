@@ -1,3 +1,4 @@
 resources:
   limits:
-    cpu: 500m
+    cpu: 550m
+
