@@ -1,0 +1,6 @@
+helm:
+  releaseName: prod
+  valueFiles:
+  - values.yaml
+  - values-prod.yaml
+
