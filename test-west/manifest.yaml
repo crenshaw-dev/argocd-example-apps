@@ -3,11 +3,11 @@ kind: Service
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test-east
+    app.kubernetes.io/instance: test-west
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test-east
-  name: test-east-helm-guestbook
+    release: test-west
+  name: test-west-helm-guestbook
 spec:
   ports:
   - name: http
@@ -16,7 +16,7 @@ spec:
     targetPort: http
   selector:
     app: helm-guestbook
-    release: test-east
+    release: test-west
   type: ClusterIP
 
 ---
@@ -26,11 +26,11 @@ kind: Deployment
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test-east
+    app.kubernetes.io/instance: test-west
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test-east
-  name: test-east-helm-guestbook
+    release: test-west
+  name: test-west-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
   replicas: 1
@@ -38,12 +38,12 @@ spec:
   selector:
     matchLabels:
       app: helm-guestbook
-      release: test-east
+      release: test-west
   template:
     metadata:
       labels:
         app: helm-guestbook
-        release: test-east
+        release: test-west
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
