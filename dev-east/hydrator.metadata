@@ -1,0 +1,7 @@
+{
+  "commands": [
+    "helm template . --name-template dev-east --include-crds"
+  ],
+  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "drySha": "d012c17845676cedb046e05b982681243aaecbf3"
+}
