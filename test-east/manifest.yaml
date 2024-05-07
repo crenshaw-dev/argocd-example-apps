@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test
+    app.kubernetes.io/instance: test-east
     chart: helm-guestbook-0.1.0
     heritage: Helm
     release: test
@@ -26,14 +26,14 @@ kind: Deployment
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test
+    app.kubernetes.io/instance: test-east
     chart: helm-guestbook-0.1.0
     heritage: Helm
     release: test
   name: test-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
