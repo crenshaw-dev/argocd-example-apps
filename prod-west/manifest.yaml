@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/instance: prod-west
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: prod-west
-  name: prod-west-helm-guestbook
+    release: prod
+  name: prod-helm-guestbook
 spec:
   ports:
   - name: http
@@ -16,8 +16,8 @@ spec:
     targetPort: http
   selector:
     app: helm-guestbook
-    release: prod-west
-  type: ClusterIP
+    release: prod
+  type: LoadBalancer
 
 ---
 
@@ -29,8 +29,8 @@ metadata:
     app.kubernetes.io/instance: prod-west
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: prod-west
-  name: prod-west-helm-guestbook
+    release: prod
+  name: prod-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
   replicas: 1
@@ -38,15 +38,15 @@ spec:
   selector:
     matchLabels:
       app: helm-guestbook
-      release: prod-west
+      release: prod
   template:
     metadata:
       labels:
         app: helm-guestbook
-        release: prod-west
+        release: prod
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
