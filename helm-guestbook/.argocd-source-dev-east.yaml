@@ -1,4 +1,5 @@
 helm:
+  namespace: default
   releaseName: dev
   valueFiles:
   - values.yaml
