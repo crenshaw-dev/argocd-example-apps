@@ -1,6 +1,0 @@
-helm:
-  releaseName: dev
-  valueFiles:
-  - values.yaml
-  - values-dev.yaml
-

@@ -1,6 +1,0 @@
-helm:
-  releaseName: test
-  valueFiles:
-  - values.yaml
-  - values-test.yaml
-

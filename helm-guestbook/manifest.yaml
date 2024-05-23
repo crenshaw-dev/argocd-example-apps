@@ -1,0 +1,87 @@
+apiVersion: stable.example.com/v1
+kind: CronTab
+metadata:
+  labels:
+    app.kubernetes.io/instance: test
+  name: my-new-cron-object
+spec:
+  cronSpec: null
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: test
+  name: guestbook-ui
+spec:
+  replicas: 3
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: guestbook-ui
+  template:
+    metadata:
+      labels:
+        app: guestbook-ui
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: test
+  name: guestbook-ui
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: guestbook-ui
+
+---
+
+apiVersion: v1
+data:
+  config.yaml: |
+    a: bah
+    b: cba
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/instance: test
+  name: test-cm
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    vault.security.banzaicloud.io/inline-mutation: "true"
+    vault.security.banzaicloud.io/vault-role: nats
+    vault.security.banzaicloud.io/vault-skip-verify: "true"
+  labels:
+    app.kubernetes.io/instance: test
+    app.kubernetes.io/name: nats
+    app.kubernetes.io/version: 2.10.1
+  name: nats-box-contexts
+stringData:
+  default.json: |
+    {
+      "url": "nats://redacted-nats:4222",
+      "user": "natsbox",
+      "password": "${vault:/secret/data/redacted/nats/natsusers#NATSBOXPW}"
+    }
+type: Opaque
+
+---
+
