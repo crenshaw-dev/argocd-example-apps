@@ -33,7 +33,7 @@ metadata:
   name: prod-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
