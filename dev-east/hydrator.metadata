@@ -1,7 +1,7 @@
 {
   "commands": [
-    "helm template . --name-template dev --namespace default --values /var/folders/fm/6nfh06tj61sggxnjx8smk1zh0000gr/T/_argocd-repo/727ae0f3-a31f-46fa-817e-a9ed2ea330ef/helm-guestbook/values.yaml --values /var/folders/fm/6nfh06tj61sggxnjx8smk1zh0000gr/T/_argocd-repo/727ae0f3-a31f-46fa-817e-a9ed2ea330ef/helm-guestbook/values-dev.yaml --include-crds"
+    "helm template . --name-template dev --namespace default --values /var/folders/fm/6nfh06tj61sggxnjx8smk1zh0000gr/T/_argocd-repo/6dd380dc-e3df-4eb4-9002-15777e961e66/helm-guestbook/values.yaml --values /var/folders/fm/6nfh06tj61sggxnjx8smk1zh0000gr/T/_argocd-repo/6dd380dc-e3df-4eb4-9002-15777e961e66/helm-guestbook/values-dev.yaml --include-crds"
   ],
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "34f59399d4a8911df35bb16a7867a68e31b12f06"
+  "drySha": "68533e340f7504492d2d1c9741beeb645e565113"
 }
