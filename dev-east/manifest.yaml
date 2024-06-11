@@ -1,71 +1,69 @@
-object:
-  apiVersion: v1
-  kind: Service
-  metadata:
-    labels:
-      app: helm-guestbook
-      app.kubernetes.io/instance: my-app
-      chart: helm-guestbook-0.1.0
-      heritage: Helm
-      release: my-app
-    name: my-app-helm-guestbook
-  spec:
-    ports:
-      - name: http
-        port: 80
-        protocol: TCP
-        targetPort: http
-    selector:
-      app: helm-guestbook
-      release: my-app
-    type: ClusterIP
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: helm-guestbook
+    app.kubernetes.io/instance: my-app
+    chart: helm-guestbook-0.1.0
+    heritage: Helm
+    release: my-app
+  name: my-app-helm-guestbook
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: http
+  selector:
+    app: helm-guestbook
+    release: my-app
+  type: ClusterIP
 
 ---
 
-object:
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    labels:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helm-guestbook
+    app.kubernetes.io/instance: my-app
+    chart: helm-guestbook-0.1.0
+    heritage: Helm
+    release: my-app
+  name: my-app-helm-guestbook
+spec:
+  progressDeadlineSeconds: 5
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
       app: helm-guestbook
-      app.kubernetes.io/instance: my-app
-      chart: helm-guestbook-0.1.0
-      heritage: Helm
       release: my-app
-    name: my-app-helm-guestbook
-  spec:
-    progressDeadlineSeconds: 5
-    replicas: 2
-    revisionHistoryLimit: 3
-    selector:
-      matchLabels:
+  template:
+    metadata:
+      labels:
         app: helm-guestbook
         release: my-app
-    template:
-      metadata:
-        labels:
-          app: helm-guestbook
-          release: my-app
-      spec:
-        containers:
-          - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-            imagePullPolicy: IfNotPresent
-            livenessProbe:
-              httpGet:
-                path: /
-                port: http
-            name: helm-guestbook
-            ports:
-              - containerPort: 80
-                name: http
-                protocol: TCP
-            readinessProbe:
-              httpGet:
-                path: /
-                port: http
-            resources:
-              limits:
-                cpu: 2500m
+    spec:
+      containers:
+        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          name: helm-guestbook
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            limits:
+              cpu: 2500m
 
 ---
 
