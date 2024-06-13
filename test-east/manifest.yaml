@@ -10,10 +10,10 @@ metadata:
   name: test-helm-guestbook
 spec:
   ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: http
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: http
   selector:
     app: helm-guestbook
     release: test
@@ -46,24 +46,24 @@ spec:
         release: test
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        imagePullPolicy: IfNotPresent
-        livenessProbe:
-          httpGet:
-            path: /
-            port: http
-        name: helm-guestbook
-        ports:
-        - containerPort: 80
-          name: http
-          protocol: TCP
-        readinessProbe:
-          httpGet:
-            path: /
-            port: http
-        resources:
-          limits:
-            cpu: 1000m
+        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          name: helm-guestbook
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            limits:
+              cpu: 1000m
 
 ---
 
