@@ -46,7 +46,7 @@ spec:
         release: test
     spec:
       containers:
-        - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
+        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
