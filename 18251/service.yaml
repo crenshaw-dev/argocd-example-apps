@@ -19,11 +19,6 @@ spec:
       port: 80
       protocol: TCP
       targetPort: http
-    - name: prometheus-http
-      nodePort: 32577
-      port: 2112
-      protocol: TCP
-      targetPort: prometheus-http
   selector:
     app.kubernetes.io/instance: app
     app.kubernetes.io/name: app
