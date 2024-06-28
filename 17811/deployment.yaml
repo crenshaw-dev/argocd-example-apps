@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       initContainers:
-        - name: nginx
+        - name: nginx-sidecar
           image: nginx:1.14.2
           restartPolicy: Always
       containers:
