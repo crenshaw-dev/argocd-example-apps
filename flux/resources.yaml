@@ -8,13 +8,25 @@ spec:
   ref:
     branch: master
 ---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmChart
+metadata:
+  name: podinfo
+spec:
+  chart: ./charts/podinfo
+  sourceRef:
+    name: podinfo
+    kind: GitRepository
+  interval: 10m
+  reconcileStrategy: Revision
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: podinfo
 spec:
-  sourceRef:
-    kind: GitRepository
+  chartRef:
+    kind: HelmChart
     name: podinfo
   interval: 10m
   values:
