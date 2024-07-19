@@ -3,5 +3,5 @@
     "helm template . --name-template my-app --include-crds"
   ],
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "55432fadbab21ae3c0f3aff0ea47e6cffebb21b9"
+  "drySha": "4371c77cab37cceae9e36adedf2def821275ecc7"
 }
