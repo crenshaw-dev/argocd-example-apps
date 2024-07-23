@@ -25,12 +25,10 @@ spec:
   selector:
     matchLabels:
       app: guestbook-ui
-      please: break
   template:
     metadata:
       labels:
         app: guestbook-ui
-        please: break
     spec:
       containers:
         - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
