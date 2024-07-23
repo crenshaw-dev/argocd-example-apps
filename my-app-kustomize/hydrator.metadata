@@ -1,7 +1,8 @@
 {
   "commands": [
+    "kustomize edit set image gcr.io/heptio-images/ks-guestbook-demo=override",
     "kustomize build ./kustomize-guestbook"
   ],
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "44a964a812bacff1408a3c21e7aba4f64acfc76c"
+  "drySha": "d2fc41afa14ef801df27d9f49370e740fbea90c7"
 }
