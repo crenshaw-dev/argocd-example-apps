@@ -33,7 +33,7 @@ metadata:
   name: hydrator-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
