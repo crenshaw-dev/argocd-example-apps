@@ -1,2 +1,3 @@
 helm:
+  namespace: default
   releaseName: hydrator
