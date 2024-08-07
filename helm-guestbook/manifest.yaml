@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/instance: 2-hydrator
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: 2-hydrator
-  name: 2-hydrator-helm-guestbook
+    release: hydrator
+  name: hydrator-helm-guestbook
 spec:
   ports:
     - name: http
@@ -16,7 +16,7 @@ spec:
       targetPort: http
   selector:
     app: helm-guestbook
-    release: 2-hydrator
+    release: hydrator
   type: ClusterIP
 
 ---
@@ -29,8 +29,8 @@ metadata:
     app.kubernetes.io/instance: 2-hydrator
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: 2-hydrator
-  name: 2-hydrator-helm-guestbook
+    release: hydrator
+  name: hydrator-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
   replicas: 2
@@ -38,12 +38,12 @@ spec:
   selector:
     matchLabels:
       app: helm-guestbook
-      release: 2-hydrator
+      release: hydrator
   template:
     metadata:
       labels:
         app: helm-guestbook
-        release: 2-hydrator
+        release: hydrator
     spec:
       containers:
         - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
