@@ -5,4 +5,5 @@ metadata:
   namespace: argocd
 data:
   policy.csv: |
-    p, role:admin, applications, delete/*/Pod/*, *, deny
+    p, test, applications, get, *, allow
+    p, test, applications, delete/*/Pod/*, *, allow
