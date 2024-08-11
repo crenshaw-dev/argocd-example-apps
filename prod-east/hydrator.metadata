@@ -1,0 +1,7 @@
+{
+  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "drySha": "35cac0128a6c0fb6ded3f3fbfc47bf7c408c07cd",
+  "commands": [
+    "helm template . --name-template prod-east --namespace prod-east --values ./big-helm/prod-east-values.yaml --include-crds"
+  ]
+}
