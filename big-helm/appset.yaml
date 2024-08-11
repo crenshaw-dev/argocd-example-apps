@@ -34,3 +34,4 @@ spec:
         syncSource:
           targetBranch: big/env/{{.env}}
           path: "{{.env}}-{{.region}}"
+
