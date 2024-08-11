@@ -1,0 +1,4 @@
+helm:
+  namespace: pre-test-east
+  valueFiles:
+  - pre-test-east-values.yaml

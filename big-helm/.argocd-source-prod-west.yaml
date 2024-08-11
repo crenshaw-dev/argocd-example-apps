@@ -1,0 +1,4 @@
+helm:
+  namespace: prod-west
+  valueFiles:
+  - prod-west-values.yaml
