@@ -46,7 +46,7 @@ metadata:
     helm.sh/chart: big-helm-0.1.0
   name: super-prod-west-big-helm
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/instance: super-prod-west

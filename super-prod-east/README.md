@@ -7,6 +7,6 @@ To hydrate the manifests in this repository, run the following commands:
 
 git clone https://github.com/crenshaw-dev/argocd-example-apps
 # cd into the cloned directory
-git checkout 35cac0128a6c0fb6ded3f3fbfc47bf7c408c07cd
+git checkout 6d83beeebaa1425a0aa39971afa4f0a9748bec51
 helm template . --name-template super-prod-east --namespace super-prod-east --values ./big-helm/super-prod-east-values.yaml --include-crds
 ```
