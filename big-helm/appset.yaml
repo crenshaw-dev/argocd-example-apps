@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appset
+spec:
+  goTemplate: true
+  generators:
+  - matrix:
+      generators:
+      - list:
+          elements:
+          - env: dev
+          - env: pre-test
+          - env: perf-test
+          - env: prod
+          - env: super-prod
+      - list:
+          elements:
+          - region: east
+          - region: west
+  template:
+    metadata:
+      name: '{{.env}}-{{.region}}'
+    spec:
+      project: default
+      destination:
+        namespace: default
+        server: https://kubernetes.default.svc
+      sourceHydrator:
+        drySource:
+          repoURL: https://github.com/crenshaw-dev/argocd-example-apps
+          targetRevision: HEAD
+          path: big-helm
+        syncSource:
+          targetBranch: big/env/{{.env}}
+          path: "{{.env}}-{{.region}}"

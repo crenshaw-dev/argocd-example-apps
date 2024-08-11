@@ -1,0 +1,4 @@
+helm:
+  namespace: super-prod-east
+  valueFiles:
+  - super-prod-east-values.yaml

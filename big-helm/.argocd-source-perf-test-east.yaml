@@ -1,0 +1,4 @@
+helm:
+  namespace: perf-test-east
+  valueFiles:
+  - perf-test-east-values.yaml

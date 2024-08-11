@@ -1,0 +1,4 @@
+helm:
+  namespace: perf-test-west
+  valueFiles:
+  - perf-test-west-values.yaml

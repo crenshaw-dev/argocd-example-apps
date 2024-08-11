@@ -1,0 +1,4 @@
+helm:
+  namespace: dev-west
+  valueFiles:
+  - dev-west-values.yaml

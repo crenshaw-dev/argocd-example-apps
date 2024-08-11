@@ -1,0 +1,4 @@
+helm:
+  namespace: dev-east
+  valueFiles:
+  - dev-east-values.yaml
