@@ -1,0 +1,7 @@
+{
+  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "drySha": "6d83beeebaa1425a0aa39971afa4f0a9748bec51",
+  "commands": [
+    "helm template . --name-template perf-test-west --namespace perf-test-west --values ./big-helm/perf-test-west-values.yaml --include-crds"
+  ]
+}
