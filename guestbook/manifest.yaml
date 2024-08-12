@@ -18,9 +18,7 @@ spec:
     app: helm-guestbook
     release: hydrator
   type: ClusterIP
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -64,6 +62,3 @@ spec:
           resources:
             limits:
               cpu: 2500m
-
----
-
