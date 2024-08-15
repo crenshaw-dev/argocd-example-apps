@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: 2-hydrator
+    app.kubernetes.io/instance: hydrator
     chart: helm-guestbook-0.1.0
     heritage: Helm
     release: hydrator
@@ -18,15 +18,13 @@ spec:
     app: helm-guestbook
     release: hydrator
   type: ClusterIP
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: 2-hydrator
+    app.kubernetes.io/instance: hydrator
     chart: helm-guestbook-0.1.0
     heritage: Helm
     release: hydrator
@@ -64,6 +62,3 @@ spec:
           resources:
             limits:
               cpu: 2500m
-
----
-

@@ -1,5 +1,7 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
   "drySha": "6950caf8881481f20017156b3ac0528343d0da4f",
-  "commands": null
+  "commands": [
+    "helm template . --name-template hydrator --include-crds"
+  ]
 }
