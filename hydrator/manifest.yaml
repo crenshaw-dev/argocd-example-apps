@@ -42,7 +42,7 @@ metadata:
     helm.sh/chart: hydrator-demo-0.1.0
   name: hydrator-hydrator-demo
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app.kubernetes.io/instance: hydrator
