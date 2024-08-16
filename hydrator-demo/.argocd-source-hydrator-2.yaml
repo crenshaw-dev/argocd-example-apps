@@ -1,3 +1,4 @@
 helm:
   valueFiles:
     - values-2.yaml
+  namespace: default
