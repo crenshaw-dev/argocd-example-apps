@@ -1,0 +1,3 @@
+helm:
+  valueFiles:
+    - values-2.yaml
