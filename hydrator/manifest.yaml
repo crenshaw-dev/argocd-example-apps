@@ -3,23 +3,23 @@ automountServiceAccountToken: true
 kind: ServiceAccount
 metadata:
   labels:
-    app.kubernetes.io/instance: hydrator-2
+    app.kubernetes.io/instance: hydrator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: hydrator-demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: hydrator-demo-0.1.0
-  name: hydrator-2-hydrator-demo
+  name: hydrator-hydrator-demo
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/instance: hydrator-2
+    app.kubernetes.io/instance: hydrator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: hydrator-demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: hydrator-demo-0.1.0
-  name: hydrator-2-hydrator-demo
+  name: hydrator-hydrator-demo
 spec:
   ports:
     - name: http
@@ -27,7 +27,7 @@ spec:
       protocol: TCP
       targetPort: http
   selector:
-    app.kubernetes.io/instance: hydrator-2
+    app.kubernetes.io/instance: hydrator
     app.kubernetes.io/name: hydrator-demo
   type: ClusterIP
 ---
@@ -35,22 +35,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/instance: hydrator-2
+    app.kubernetes.io/instance: hydrator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: hydrator-demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: hydrator-demo-0.1.0
-  name: hydrator-2-hydrator-demo
+  name: hydrator-hydrator-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: hydrator-2
+      app.kubernetes.io/instance: hydrator
       app.kubernetes.io/name: hydrator-demo
   template:
     metadata:
       labels:
-        app.kubernetes.io/instance: hydrator-2
+        app.kubernetes.io/instance: hydrator
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: hydrator-demo
         app.kubernetes.io/version: 1.16.0
@@ -75,7 +75,7 @@ spec:
           resources: {}
           securityContext: {}
       securityContext: {}
-      serviceAccountName: hydrator-2-hydrator-demo
+      serviceAccountName: hydrator-hydrator-demo
 ---
 apiVersion: v1
 kind: Pod
@@ -83,16 +83,16 @@ metadata:
   annotations:
     helm.sh/hook: test
   labels:
-    app.kubernetes.io/instance: hydrator-2
+    app.kubernetes.io/instance: hydrator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: hydrator-demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: hydrator-demo-0.1.0
-  name: hydrator-2-hydrator-demo-test-connection
+  name: hydrator-hydrator-demo-test-connection
 spec:
   containers:
     - args:
-        - hydrator-2-hydrator-demo:80
+        - hydrator-hydrator-demo:80
       command:
         - wget
       image: busybox
