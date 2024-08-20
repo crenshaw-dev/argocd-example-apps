@@ -1,5 +1,5 @@
 {
-  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "repoURL": "git@github.com:crenshaw-dev/argocd-example-apps.git",
   "drySha": "09c8cd10ff196d5821272532426406d28db6bfba",
   "commands": null
 }
