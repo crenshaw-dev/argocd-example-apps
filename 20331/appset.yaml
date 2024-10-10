@@ -18,7 +18,7 @@ spec:
         server: https://kubernetes.default.svc
         namespace: 'default'
       sources:
-      - repoURL: https://gitlab.com/crenshaw-dev/argocd-example-apps.git
+      - repoURL: https://github.com/crenshaw-dev/argocd-example-apps.git
         targetRevision: master
         path: 20331/vpa
         helm:
