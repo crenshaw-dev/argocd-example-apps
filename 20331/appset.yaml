@@ -18,9 +18,9 @@ spec:
         server: https://kubernetes.default.svc
         namespace: 'default'
       sources:
-      - repoURL: https://gitlab.com/*****
+      - repoURL: https://gitlab.com/crenshaw-dev/argocd-example-apps.git
         targetRevision: master
-        path: charts/{{ index (splitList "." .path.filenameNormalized) 0 }}
+        path: 20331/vpa
         helm:
           valuesObject:
             vpa:
