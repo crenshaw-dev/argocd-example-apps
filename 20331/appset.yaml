@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+spec:
+  goTemplate: true
+  template:
+    spec:
+      project: default
+      sources:
+      - repoURL: https://gitlab.com/*****
+        targetRevision: master
+        path: charts/{{ index (splitList "." .path.filenameNormalized) 0 }}
+        helm:
+          valuesObject:
+            vpa:
+              enabled: '{{ default true .vpa.enabled }}'
+              updateMode: '{{ default "Off" .vpa.updateMode }}'
+              minAllowed:
+                memory: '{{ default "64Mi" .vpa.minAllowed.memory }}'
+              maxAllowed:
+                memory: '{{ default "2Gi" .vpa.maxAllowed.memory }}'
