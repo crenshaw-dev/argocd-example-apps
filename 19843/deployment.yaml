@@ -18,6 +18,7 @@ spec:
     spec:
       initContainers:
         - image: "alpine:latest"
+          command: [sleep, "60"]
           imagePullPolicy: "Always"
           name: "app-with-initial-container-logshipper"
       containers:
