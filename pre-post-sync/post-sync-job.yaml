@@ -3,7 +3,9 @@ kind: Job
 metadata:
   name: after
   annotations:
-    argocd.argoproj.io/hook: PostSync
+    helm.sh/hook: pre-upgrade,pre-install
+    helm.sh/hook-delete-policy: before-hook-creation
+    helm.sh/hook-weight: "200"
 spec:
   template:
     spec:
