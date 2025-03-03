@@ -10,4 +10,4 @@ resources:
 images:
   - name: gcr.io/heptio-images/ks-guestbook-demo
     newName: gcr.io/heptio-images/ks-guestbook-demo
-    newTag: fake
+    newTag: "0.1"
