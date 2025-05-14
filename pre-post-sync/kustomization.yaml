@@ -7,6 +7,6 @@ resources:
 - post-sync-job.yaml
 
 images:
-  - name: gcr.io/heptio-images/ks-guestbook-demo
-    newName: gcr.io/heptio-images/ks-guestbook-demo
+  - name: quay.io/crenshaw_dev/guestbook-demo
+    newName: quay.io/crenshaw_dev/guestbook-demo
     newTag: "0.2"

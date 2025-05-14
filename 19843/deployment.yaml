@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: "Always"
           name: "app-with-initial-container-logshipper"
       containers:
-        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        - image: quay.io/crenshaw_dev/guestbook-demo:0.2
           name: guestbook-ui
           ports:
             - containerPort: 80
