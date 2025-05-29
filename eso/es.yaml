@@ -8,6 +8,7 @@ spec:
         conversionStrategy: Default
         decodingStrategy: None
         key: mykey
+      secretKey: mykey
   refreshInterval: 1h
   secretStoreRef:
     kind: SecretStore
