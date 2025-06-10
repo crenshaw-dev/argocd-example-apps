@@ -1,8 +1,5 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
   "drySha": "ed8ed3d2f51420ca67be47ccbda1af5fb67cf5cb",
-  "commands": null,
-  "author": "",
-  "date": "",
-  "message": ""
+  "commands": null
 }
