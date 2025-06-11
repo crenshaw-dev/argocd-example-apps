@@ -1,15 +1,16 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "bf8a090fd287be4bb8742b02ea8d02c1eecf024e",
+  "drySha": "808ff369670887065507ab8505d5d3ae548c069f",
   "commands": null,
   "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
-  "date": "2025-06-11T13:16:35-04:00",
-  "message": "test tracing\n\nArgocd-related-commit-hash: abc123\nArgocd-related-commit-repourl: https://git.example.com/org/repo\nArgocd-related-commit-date: 2025-06-09T13:50:18-04:00\nArgocd-related-commit-author: Me <me@example.com>\nArgocd-related-commit-message: testing stuff",
+  "date": "2025-06-11T13:23:47-04:00",
+  "message": "test tracing\n\nArgocd-related-commit-sha: abc123\nArgocd-related-commit-repourl: https://git.example.com/org/repo\nArgocd-related-commit-date: 2025-06-09T13:50:18-04:00\nArgocd-related-commit-author: Me <me@example.com>\nArgocd-related-commit-message: testing stuff",
   "relatedCommits": [
     {
       "author": "Me <me@example.com>",
       "date": "2025-06-09T17:50:18Z",
       "message": "testing stuff",
+      "sha": "abc123",
       "repoUrl": "https://git.example.com/org/repo"
     }
   ]
