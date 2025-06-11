@@ -2,7 +2,15 @@
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
   "drySha": "01d064e4ee71ac5b9f6844a74ced2bea1f44472b",
   "commands": null,
-  "author": "",
-  "date": "",
-  "message": ""
+  "author": "Michael Crenshaw \u003c350466+crenshaw-dev@users.noreply.github.com\u003e",
+  "date": "2025-06-11T09:57:22-04:00",
+  "message": "test tracing\n\nArgocd-related-commit-hash: abc123\nArgocd-related-commit-repourl: https://git.example.com/org/repo\nArgocd-related-commit-date: 2025-06-09T13:50:18-04:00\nArgocd-related-commit-author: Me \u003cme@example.com\u003e\nArgocd-related-commit-message: testing stuff",
+  "relatedCommits": [
+    {
+      "author": " Me \u003cme@example.com\u003e",
+      "date": null,
+      "hash": " abc123",
+      "repoUrl": " https://git.example.com/org/repo"
+    }
+  ]
 }
