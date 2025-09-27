@@ -1,0 +1,112 @@
+apiVersion: ds.aws.crossplane.io/v1
+kind: DBCluster
+metadata:
+  name: example-dbcluster
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: example-helmrelease
+
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: example-service
+
+---
+apiVersion: cassandra.rook.io/v1
+kind: Cluster
+metadata:
+  name: example-cluster
+
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: example-certificate
+
+---
+apiVersion: core.spinkube.dev/v1
+kind: SpinApp
+metadata:
+  name: example-spinapp
+
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: example-externalsecret
+
+---
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: example-canary
+
+---
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  name: example-istiooperator
+
+---
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: example-jaeger
+
+---
+apiVersion: k8s.keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: example-keycloak
+
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: example-kafka
+
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: example-scaledobject
+
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: example-virtualmachine
+
+---
+apiVersion: kyverno.io/v1
+kind: Policy
+metadata:
+  name: example-policy
+
+---
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: example-opentelemetrycollector
+
+---
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: example-httpproxy
+
+---
+apiVersion: work.karmada.io/v1alpha1
+kind: ResourceBinding
+metadata:
+  name: example-resourcebinding
+
+---
+apiVersion: zookeeper.pravega.io/v1beta1
+kind: ZookeeperCluster
+metadata:
+  name: example-zookeepercluster
