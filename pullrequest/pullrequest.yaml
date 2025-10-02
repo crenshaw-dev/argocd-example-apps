@@ -1,0 +1,14 @@
+apiVersion: promoter.argoproj.io/v1alpha1
+kind: PullRequest
+metadata:
+  name: example-proposed-commit
+spec:
+  gitRepositoryRef:
+    name: example-git-repository
+  title: test
+  targetBranch: test
+  sourceBranch: test
+  description: test
+
+  # Must be closed, merged, or open. Default is open.
+  state:
