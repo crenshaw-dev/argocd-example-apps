@@ -28,7 +28,7 @@ metadata:
     release: prod-helm-guestbook
   name: prod-helm-guestbook
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
