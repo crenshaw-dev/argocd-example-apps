@@ -1,5 +1,7 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "d8285c47d8c73e5c414ee7e31d633c51987a8523",
-  "commands": null
+  "drySha": "2e535650e1cf578bf91526f76aa28b39f35b2dbf",
+  "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
+  "date": "2025-12-10T21:18:15Z",
+  "subject": "delete service"
 }
