@@ -1,0 +1,7 @@
+{
+  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "drySha": "e25514822ca9e5388fd0468de389343f1e842aca",
+  "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
+  "date": "2026-01-15T15:29:27Z",
+  "subject": "Add promotion strategy configuration in ps.yaml"
+}
