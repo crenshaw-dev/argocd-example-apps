@@ -1,5 +1,7 @@
 # ArgoCD Example Apps
 
+<!-- promoter-test: README-only change — no helm-guestbook or kustomize-guestbook path impact -->
+
 This repository contains example applications for demoing ArgoCD functionality. Feel free
 to register this repository to your ArgoCD instance, or fork this repo and push your own commits
 to explore ArgoCD and GitOps!
