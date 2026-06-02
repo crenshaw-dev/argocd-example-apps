@@ -1,0 +1,7 @@
+{
+  "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
+  "drySha": "c4d7801205c1fc291cffd82be5d4a16203126fc2",
+  "commands": [
+    "kustomize build ./kustomize-guestbook"
+  ]
+}
