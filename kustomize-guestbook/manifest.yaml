@@ -14,7 +14,7 @@ kind: Deployment
 metadata:
   name: kustomize-guestbook-ui
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
