@@ -1,7 +1,8 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "c4d7801205c1fc291cffd82be5d4a16203126fc2",
-  "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
-  "date": "2026-06-01T20:52:22Z",
-  "subject": "chore: bump helm-guestbook replicas to trigger hydration"
+  "drySha": "ef47fc603f3e3675b717a91aa59ba21c175ec843",
+  "author": "promoter-test <promoter-test@local>",
+  "date": "2026-06-02T16:56:13Z",
+  "subject": "test(promoter): helm-guestbook only — scale replicas to 3",
+  "body": "Co-authored-by: Cursor <cursoragent@cursor.com>\n"
 }
