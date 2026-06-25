@@ -1,7 +1,7 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "6a1a4b16ce72f4c55f66cc39bc503d50465fcb2b",
+  "drySha": "f91c0b59d4d37d761abf4e4370f81dab491dc671",
   "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
-  "date": "2026-06-02T17:00:01Z",
-  "subject": "test(promoter): kustomize-guestbook only — scale replicas to 2"
+  "date": "2026-06-25T20:09:13Z",
+  "subject": "fix(test): bump guestbook image tag to 0.2 for hydrator"
 }
