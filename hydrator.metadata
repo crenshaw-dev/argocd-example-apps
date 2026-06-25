@@ -1,5 +1,7 @@
 {
-  "commands": null,
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "4d5107fe8654d8a9206b68592189073e8583f2d2"
+  "drySha": "6a1a4b16ce72f4c55f66cc39bc503d50465fcb2b",
+  "author": "Michael Crenshaw <350466+crenshaw-dev@users.noreply.github.com>",
+  "date": "2026-06-02T17:00:01Z",
+  "subject": "test(promoter): kustomize-guestbook only — scale replicas to 2"
 }
