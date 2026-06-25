@@ -33,7 +33,7 @@ metadata:
   name: test-helm-guestbook
 spec:
   progressDeadlineSeconds: 5
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -46,7 +46,7 @@ spec:
         release: test
     spec:
       containers:
-        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        - image: quay.io/crenshaw_dev/guestbook-demo:0.2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
@@ -61,9 +61,5 @@ spec:
             httpGet:
               path: /
               port: http
-          resources:
-            limits:
-              cpu: 1000m
 
 ---
-
