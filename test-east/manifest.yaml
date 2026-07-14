@@ -3,10 +3,9 @@ kind: Service
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test-east
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test
+    release: test-helm-guestbook
   name: test-helm-guestbook
 spec:
   ports:
@@ -16,34 +15,30 @@ spec:
       targetPort: http
   selector:
     app: helm-guestbook
-    release: test
+    release: test-helm-guestbook
   type: ClusterIP
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: helm-guestbook
-    app.kubernetes.io/instance: test-east
     chart: helm-guestbook-0.1.0
     heritage: Helm
-    release: test
+    release: test-helm-guestbook
   name: test-helm-guestbook
 spec:
-  progressDeadlineSeconds: 5
-  replicas: 1
+  replicas: 4
   revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: helm-guestbook
-      release: test
+      release: test-helm-guestbook
   template:
     metadata:
       labels:
         app: helm-guestbook
-        release: test
+        release: test-helm-guestbook
     spec:
       containers:
         - image: quay.io/crenshaw_dev/guestbook-demo:0.2
@@ -61,5 +56,4 @@ spec:
             httpGet:
               path: /
               port: http
-
----
+          resources: {}
