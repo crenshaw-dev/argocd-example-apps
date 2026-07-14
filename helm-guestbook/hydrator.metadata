@@ -1,7 +1,7 @@
 {
   "repoURL": "https://github.com/crenshaw-dev/argocd-example-apps",
-  "drySha": "e25514822ca9e5388fd0468de389343f1e842aca",
+  "drySha": "1faca79207e68507debdc1b3bf09ce38d7620144",
   "commands": [
-    "helm template . --name-template prod-helm-guestbook --include-crds"
+    "helm template . --name-template prod-helm-guestbook --namespace prod --values ./helm-guestbook/values.yaml --include-crds"
   ]
 }

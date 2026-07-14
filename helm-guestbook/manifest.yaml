@@ -28,7 +28,7 @@ metadata:
     release: prod-helm-guestbook
   name: prod-helm-guestbook
 spec:
-  replicas: 1
+  replicas: 4
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -41,7 +41,7 @@ spec:
         release: prod-helm-guestbook
     spec:
       containers:
-        - image: quay.io/crenshaw_dev/guestbook-demo:0.1
+        - image: quay.io/crenshaw_dev/guestbook-demo:0.2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
