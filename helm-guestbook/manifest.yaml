@@ -41,7 +41,7 @@ spec:
         release: staging-helm-guestbook
     spec:
       containers:
-        - image: quay.io/crenshaw_dev/guestbook-demo:0.1
+        - image: quay.io/crenshaw_dev/guestbook-demo:0.2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
